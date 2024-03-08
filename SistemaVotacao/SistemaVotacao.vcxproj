@@ -130,7 +130,9 @@
     <ClCompile Include="SistemaVotacao.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Candidato.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Voto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
