@@ -72,3 +72,11 @@ void cadastrarCandidato(std::list<Candidato>& candidatos) {
     candidatos.push_back(Candidato(nome, codigo, partido, cargo));
     std::cout << "Candidato cadastrado com sucesso!\n";
 }
+
+// listar candidato
+void listarCandidatos(const std::list<Candidato>& candidatos) {
+    std::cout << "\nCandidatos cadastrados:\n";
+    for (const auto& candidato : candidatos) {
+        std::cout << "Nome: " << candidato.candidato << ", Codigo: " << candidato.codigo << ", Partido: " << candidato.partido << ", Cargo: " << candidato.cargo << std::endl;
+    }
+}
