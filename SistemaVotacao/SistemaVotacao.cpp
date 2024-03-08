@@ -37,3 +37,12 @@ public:
 
     Voto(std::string c, int cod) : cargo(c), codigoCandidato(cod) {}
 };
+
+// Crie uma opção para cadastrar um novo candidato;
+void cadastrarCandidato(std::list<Candidato>& candidatos);
+// Crie uma opção para listar os candidatos cadastrados;
+void listarCandidatos(const std::list<Candidato>& candidatos);
+// Crie uma opção para cadastrar um novo voto;
+void cadastrarVoto(std::list<Voto>& votos);
+// Crie uma opção para fazer a apuração da eleição (computar os votos atuais e anunciar os vencedores).
+void apurarEleicao(const std::list<Candidato>& candidatos, const std::list<Voto>& votos);
