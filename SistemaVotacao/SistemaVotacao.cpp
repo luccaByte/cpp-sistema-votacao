@@ -80,3 +80,32 @@ void listarCandidatos(const std::list<Candidato>& candidatos) {
         std::cout << "Nome: " << candidato.candidato << ", Codigo: " << candidato.codigo << ", Partido: " << candidato.partido << ", Cargo: " << candidato.cargo << std::endl;
     }
 }
+
+// cadastrar voto
+void cadastrarVoto(std::list<Voto>& votos) {
+    std::string cargo;
+    int codigoCandidato;
+    std::cout << "Cargo para votacao: ";
+    std::cin.ignore();
+    std::getline(std::cin, cargo);
+    std::cout << "Codigo do candidato: ";
+    std::cin >> codigoCandidato;
+
+    votos.push_back(Voto(cargo, codigoCandidato));
+    std::cout << "Voto cadastrado com sucesso!\n";
+}
+
+// apurar eleicao
+
+void apurarEleicao(const std::list<Candidato>& candidatos, const std::list<Voto>& votos) {
+    std::map<int, int> contagemVotos;
+
+    for (const auto& voto : votos) {
+        contagemVotos[voto.codigoCandidato]++;
+    }
+
+    std::cout << "\nResultado da eleicao:\n";
+    for (const auto& candidato : candidatos) {
+        std::cout << "Candidato: " << candidato.candidato << ", Votos: " << contagemVotos[candidato.codigo] << std::endl;
+    }
+}
